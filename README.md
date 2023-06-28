@@ -8,7 +8,7 @@
  [Pneumonia]https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
  [Pneumothorax]https://www.kaggle.com/datasets/vbookshelf/pneumothorax-chest-xray-images-and-masks
 2. Using code from <a href="https://github.com/ndlongvn/AI-Project-2022/">preprocessing</a> to prepare dataset: 
-# ### Model
+### Model
 
 <details open>
 
@@ -26,8 +26,6 @@
 
 </details>
 
-
-<details open>
 
 ### How to using this app
 1. Access to cloned folder from GitHub and install all requirements:
