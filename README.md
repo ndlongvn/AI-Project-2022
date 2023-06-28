@@ -32,6 +32,7 @@
 ```Shell
 pip install -r requirements.txt
 ```
+2. Download checkpoints from [Model Checkpoints](#model) and put it into <a href="https://github.com/ndlongvn/AI-Project-2022/tree/main/checkpoints">checkpoints</a> folder.
 2. Run app:
 ```Shell
 streamlit run src/main.py
