@@ -3,10 +3,10 @@
 ### How to prepare dataset
 
 1. Download dataset from Kaggle link below:
- [Covid19]http://www.kaggle.com/datasets/prashant268/chest-xray-covid19-pneumonia
- [Tuberculosis]https://www.kaggle.com/datasets/tawsifurrahman/tuberculosis-tb-chest-xray-dataset
- [Pneumonia]https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
- [Pneumothorax]https://www.kaggle.com/datasets/vbookshelf/pneumothorax-chest-xray-images-and-masks
+ - [Covid19]http://www.kaggle.com/datasets/prashant268/chest-xray-covid19-pneumonia
+ - [Tuberculosis]https://www.kaggle.com/datasets/tawsifurrahman/tuberculosis-tb-chest-xray-dataset
+ - [Pneumonia]https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
+ - [Pneumothorax]https://www.kaggle.com/datasets/vbookshelf/pneumothorax-chest-xray-images-and-masks
 2. Using code from <a href="https://github.com/ndlongvn/AI-Project-2022/">preprocessing</a> to prepare dataset: 
 ### Model
 
