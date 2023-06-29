@@ -1,4 +1,4 @@
-
+__pycache__/
 checkpoints/.DS_Store
 checkpoints/ann_weights.h5
 checkpoints/cnn.h5
