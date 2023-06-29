@@ -21,7 +21,7 @@
 ## Deep Learning
 ### Introduction
 
-This is the respository of ours AI project using CNN-based model as CNN, ResNet50, VGG16, DenseNet121 and InceptionV3 to diagnose some popular lung diseases. In this repository, we provide training code, pre-trained models, network settings for AI model. We also provide an app to use our model to diagnose lung diseases. 
+This is the respository of ours Artificial Intelligence project using CNN-based model as CNN, ResNet50, VGG16, DenseNet121 and InceptionV3 to diagnose some popular lung diseases. In this repository, we provide training code, pre-trained models, network settings for AI model. We also provide an app to use our model to diagnose lung diseases. 
 
 By using this repository, you can achieve a performance of 91% accuracy on the test set of our dataset. Therefor you can use our model to diagnose lung diseases with high accuracy.
 
@@ -147,4 +147,4 @@ If you have any question, please contact us via email:
 - Thu Ngo: thu.nta200623@sis.hust.edu.vn
 
 
-```
+
