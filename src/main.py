@@ -220,16 +220,20 @@ if __name__ == '__main__':
                 time.sleep(0.5)
 
     # more app info
-    st.markdown("### About This Web App")
+    st.markdown("### Copyright")
     st.markdown("""
-                <p2> This Web App is developed by AntiLungDisease Team: \n
-                   Nguyen Duy Long\n
-                   Ho Viet Duc Luong\n
-                   Ngo Tran Anh Thu\n
-                   Pham Xuan Truong\n
-                If you want to support us with money, just click  </p2>
-                <a href='https://drive.google.com/file/d/1y4SURr2yZQhuKIQwka8sJRr7um0Xx6lo/view?usp=sharing'> here:</a>
+                <p2> This Web App is developed by AntiLungDisease Team:\n
+                   Nguyen Duy Long,
+                   Ho Viet Duc Luong,
+                   Ngo Tran Anh Thu,
+                   Pham Xuan Truong,
+                   \n
+                If you want to support us with money, click  </p2>
+                <a href='https://drive.google.com/file/d/1y4SURr2yZQhuKIQwka8sJRr7um0Xx6lo/view?usp=sharing'> here.</a>
+                \n
+                Powered by LuongBank.
                 """, unsafe_allow_html=True)
+                
     # st.image('image/coffee.jpg', width= 200)
 
 
