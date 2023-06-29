@@ -9,7 +9,7 @@
 - [Introduction](#introduction)
 - [How to install the environment](#how-to-install-environment)
 - [How to prepare the dataset](#how-to-prepare-dataset)
-- [How to train](#how-to-train-and-test)
+- [How to train and test](#how-to-train-and-test)
 - [How to using this app](#how-to-using-this-app)
 
 [Model](#model)
