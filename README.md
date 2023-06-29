@@ -1,5 +1,5 @@
 # AI-Project-2022
-
+![Lung Disease Detector](image/interface.png)
 ## Authors
 
 [LongNguyen](https://github.com/ndlongvn), [LuongHo](https://github.com/LuongHvd), [TruongPham](https://github.com/giacatxt), [ThuNgo](https://github.com/superyogurt)
