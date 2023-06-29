@@ -98,3 +98,13 @@ If you have any question, please contact us via email:
 
 
 
+### How to using this app
+1. Access to cloned folder from GitHub and install all requirements:
+```Shell
+pip install -r requirements.txt
+```
+2. Download checkpoints from [Model Checkpoints](#model) and put it into <a href="https://github.com/ndlongvn/AI-Project-2022/tree/main/checkpoints">checkpoints</a> folder.
+2. Run app:
+```Shell
+streamlit run src/main.py
+```
