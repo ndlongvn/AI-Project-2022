@@ -6,6 +6,7 @@ import pandas as pd
 import os
 import sys
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+# parent_dir = os.path.dirname(os.path.__file__)
 import tensorflow as tf
 sys.path.append(parent_dir)
 from model.ANN import MLP_Model
@@ -62,7 +63,7 @@ if __name__ == '__main__':
         st.write("")
         st.write("")
         st.write("""
-        **Computer Science (_Talent Program_)** | Ha Noi University of Science and Technology
+        **Computer Science (_Talented Program_)** | Ha Noi University of Science and Technology
         """)
 
     instructions = """
@@ -139,19 +140,19 @@ if __name__ == '__main__':
     pne= [] # Pneumothorax
     
     img_path= [os.path.join(parent_dir, 'image', uploaded_file.name).replace('\\', '/') for uploaded_file in uploaded_files]
-
+    # img_path= [os.path.join(parent_dir, 'image', uploaded_file.name).replace('/', '\\') for uploaded_file in uploaded_files]
     if uploaded_files is not None and len(uploaded_files) != 0:   
             if st.button('Predict For Image'): 
                 # load model and prediction
                 with st.spinner('Wait for prediction...'):
                     if use_model == 'ANN':
-                        model= load_model(MLP_Model(input_shape= input_shape, num_classes= num_classes), os.path.join(parent_dir, dict_model_path[use_model]).replace('/', '\\'))
+                        model= load_model(MLP_Model(input_shape= input_shape, num_classes= num_classes), os.path.join(parent_dir, dict_model_path[use_model]))#.replace('/', '\\'))
                     elif use_model == 'CNN':
-                        model= load_model(CNN_Model(input_shape= input_shape, num_classes= num_classes), os.path.join(parent_dir, dict_model_path[use_model]).replace('/', '\\'))
+                        model= load_model(CNN_Model(input_shape= input_shape, num_classes= num_classes), os.path.join(parent_dir, dict_model_path[use_model]))#.replace('/', '\\'))
                     elif use_model == 'ResNet50':
-                        model= load_model(ResNet50_Model(input_shape= input_shape, num_classes= num_classes), os.path.join(parent_dir, dict_model_path[use_model]).replace('/', '\\'))
+                        model= load_model(ResNet50_Model(input_shape= input_shape, num_classes= num_classes), os.path.join(parent_dir, dict_model_path[use_model]))#.replace('/', '\\'))
                     elif use_model == 'DenseNet121 (Best Model)':
-                        model= load_model(DenseNet121_Model(input_shape= input_shape, num_classes= num_classes), os.path.join(parent_dir, dict_model_path[use_model]).replace('/', '\\'))
+                        model= load_model(DenseNet121_Model(input_shape= input_shape, num_classes= num_classes), os.path.join(parent_dir, dict_model_path[use_model]))#.replace('/', '\\'))
                     preds= predict(img_path, model)
                     for i, pred in enumerate(preds):
                         normal.append(pred[1])
@@ -221,11 +222,15 @@ if __name__ == '__main__':
     # more app info
     st.markdown("### About This Web App")
     st.markdown("""
-                <p2>Im a student and I enjoy working on this project in my free time, especially at night.\
-                    If you want to support me with a coffee, just click on </p2>
-                <a href='https://www.example.com/donate'>the caffeine:</a>
+                <p2> This Web App is developed by AntiLungDisease Team: \n
+                   Nguyen Duy Long\n
+                   Ho Viet Duc Luong\n
+                   Ngo Tran Anh Thu\n
+                   Pham Xuan Truong\n
+                If you want to support us with money, just click  </p2>
+                <a href='https://drive.google.com/file/d/1y4SURr2yZQhuKIQwka8sJRr7um0Xx6lo/view?usp=sharing'> here:</a>
                 """, unsafe_allow_html=True)
-    st.image('image/coffee.jpg', width= 200)
+    # st.image('image/coffee.jpg', width= 200)
 
 
 

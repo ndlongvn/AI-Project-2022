@@ -72,10 +72,10 @@ def color_value(val):
     
 def get_name(name):
     name= name.split('.')[0]
-    if len(name)<12:
+    if len(name)<14:
         return name
     else:
-        return name[:12]+'...'
+        return name[:14]+'...'
     
 def inverse_softmax(row):
     logit = np.log(row)
