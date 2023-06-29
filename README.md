@@ -89,6 +89,56 @@ streamlit run src/main.py
 
 ### Citation
 
+```bibtex
+@article{HuangLW16a2016DBLP,
+  author       = {Gao Huang and
+                  Zhuang Liu and
+                  Kilian Q. Weinberger},
+  title        = {Densely Connected Convolutional Networks},
+  journal      = {CoRR},
+  volume       = {abs/1608.06993},
+  year         = {2016},
+  url          = {http://arxiv.org/abs/1608.06993},
+  eprinttype    = {arXiv},
+  eprint       = {1608.06993},
+  timestamp    = {Mon, 10 Sep 2018 15:49:32 +0200},
+  biburl       = {https://dblp.org/rec/journals/corr/HuangLW16a.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+@article{bento2021multilayer,
+  title={Multilayer Perceptron explained with a real-life example and python code: Sentiment analysis},
+  author={Bento, Carolina},
+  journal={Towards Data Science},
+  year={2021}
+}
+@article{miyashita2022atypical,
+  title={Atypical pneumonia: Pathophysiology, diagnosis, and treatment},
+  author={Miyashita, Naoyuki},
+  journal={Respiratory investigation},
+  volume={60},
+  number={1},
+  pages={56--67},
+  year={2022},
+  publisher={Elsevier}
+}
+@article{huan2021pneumothorax,
+  title={Pneumothorax: classification and etiology},
+  author={Huan, Nai-Chien and Sidhu, Calvin and Thomas, Rajesh},
+  journal={Clinics in chest medicine},
+  volume={42},
+  number={4},
+  pages={711--727},
+  year={2021},
+  publisher={Elsevier}
+}
+@book{goodfellow2016deep,
+  title={Deep learning},
+  author={Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron},
+  year={2016},
+  publisher={MIT press}
+}
+```
+
 ### Contact
 If you have any question, please contact us via email:
 - Long Nguyen: long.nd204580@sis.hust.edu.vn
