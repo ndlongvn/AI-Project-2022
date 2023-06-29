@@ -9,8 +9,7 @@
 - [Introduction](#introduction)
 - [How to install the environment](#how-to-install-environment)
 - [How to prepare the dataset](#how-to-prepare-dataset)
-- [How to train](#how-to-train)
-- [How to test](#how-to-test)
+- [How to train](#how-to-train-and-test)
 - [How to using this app](#how-to-using-this-app)
 
 [Model](#model)
@@ -24,11 +23,11 @@
 
 This is the respository of ours AI project using CNN-based model as CNN, ResNet50, VGG16, DenseNet121 and InceptionV3 to diagnose some popular lung diseases. In this repository, we provide training code, pre-trained models, network settings for AI model. We also provide an app to use our model to diagnose lung diseases. 
 
-By using this repository, you can achieve a performance of 91% on the test set of our dataset. Therefor you can use our model to diagnose lung diseases with high accuracy.
+By using this repository, you can achieve a performance of 91% accuracy on the test set of our dataset. Therefor you can use our model to diagnose lung diseases with high accuracy.
 
 ### How to install environment
 
-1. Clone the repository into a directory. We refer to that directory as *`TCN_LIPREADING_ROOT`*.
+1. Clone the repository into a directory. We refer to that directory as *AI-PROJECT-ROOT*.
 
 ```Shell
 git clone --recursive https://github.com/ndlongvn/AI-Project-2022.git
@@ -74,7 +73,7 @@ streamlit run src/main.py
 
 <details open>
 
-<summary>Table 1. Model Checkpoints.</summary>
+<summary>Table. Model Checkpoints.</summary>
 
 <p> </p>
 
