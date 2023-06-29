@@ -1,0 +1,8 @@
+
+checkpoints/.DS_Store
+checkpoints/ann_weights.h5
+checkpoints/cnn.h5
+checkpoints/densenet121.h5
+*.h5
+.DS_Store
+*.pyc

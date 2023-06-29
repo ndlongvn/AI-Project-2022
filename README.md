@@ -29,7 +29,7 @@
 </details>
 
 
-### How to using this app
+### How to use  this app
 1. Access to cloned folder from GitHub and install all requirements:
 ```Shell
 pip install -r requirements.txt
