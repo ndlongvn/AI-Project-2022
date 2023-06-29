@@ -30,7 +30,7 @@ By using this repository, you can achieve a performance of 91% accuracy on the t
 1. Clone the repository into a directory. We refer to that directory as *AI-PROJECT-ROOT*.
 
 ```Shell
-git clone --recursive https://github.com/ndlongvn/AI-Project-2022.git
+git clone https://github.com/ndlongvn/AI-Project-2022.git
 ```
 
 2. Install all required packages.
