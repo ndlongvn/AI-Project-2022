@@ -5,7 +5,7 @@
 [LongNguyen](https://github.com/ndlongvn), [LuongHo](https://github.com/LuongHvd), [TruongPham](https://github.com/giacatxt), [ThuNgo](https://github.com/superyogurt)
 
 ## Content
-[Deep Lipreading](#deep-lipreading)
+[Deep Learning](#deep-learning)
 - [Introduction](#introduction)
 - [How to install the environment](#how-to-install-environment)
 - [How to prepare the dataset](#how-to-prepare-dataset)
@@ -19,6 +19,7 @@
 
 [Contact](#contact)
 
+## Deep Learning
 ### Introduction
 
 This is the respository of ours AI project using CNN-based model as CNN, ResNet50, VGG16, DenseNet121 and InceptionV3 to diagnose some popular lung diseases. In this repository, we provide training code, pre-trained models, network settings for AI model. We also provide an app to use our model to diagnose lung diseases. 
