@@ -2,6 +2,43 @@
 
 ## Authors
 
+[LongNguyen](https://github.com/ndlongvn), [LuongHo](https://github.com/LuongHvd), [TruongPham](https://github.com/giacatxt), [ThuNgo](https://github.com/superyogurt)
+
+## Content
+[Deep Lipreading](#deep-lipreading)
+- [Introduction](#introduction)
+- [How to install the environment](#how-to-install-environment)
+- [How to prepare the dataset](#how-to-prepare-dataset)
+- [How to train](#how-to-train)
+- [How to test](#how-to-test)
+- [How to using this app](#how-to-using-this-app)
+
+[Model](#model)
+
+[Citation](#citation)
+
+[Contact](#contact)
+
+### Introduction
+
+This is the respository of ours AI project using CNN-based model as CNN, ResNet50, VGG16, DenseNet121 and InceptionV3 to diagnose some popular lung diseases. In this repository, we provide training code, pre-trained models, network settings for AI model. We also provide an app to use our model to diagnose lung diseases. 
+
+By using this repository, you can achieve a performance of 91% on the test set of our dataset. Therefor you can use our model to diagnose lung diseases with high accuracy.
+
+### How to install environment
+
+1. Clone the repository into a directory. We refer to that directory as *`TCN_LIPREADING_ROOT`*.
+
+```Shell
+git clone --recursive https://github.com/ndlongvn/AI-Project-2022.git
+```
+
+2. Install all required packages.
+
+```Shell
+pip install -r requirements.txt
+```
+
 ### How to prepare dataset
 
 1. Download dataset from Kaggle and put it into <a href="https://github.com/ndlongvn/AI-Project-2022/tree/main/data">data</a> folder:
@@ -10,6 +47,28 @@
     - [Pneumonia Dataset](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
     - [Pneumothorax Dataset](https://www.kaggle.com/datasets/vbookshelf/pneumothorax-chest-xray-images-and-masks)
 2. Using code from <a href="https://github.com/ndlongvn/AI-Project-2022/blob/main/scripts/data_preprocess.py">data preprocess</a> to prepare dataset.
+
+
+### How to train and test
+1. You can use code from <a href="https://github.com/ndlongvn/AI-Project-2022/tree/main/notebooks">notebooks</a> to train model. Some model code is provided in this folder and you can use it to train model as:
+    - [ANN](https://github.com/ndlongvn/AI-Project-2022/blob/main/notebooks/ANN.ipynb)
+    - [CNN](https://github.com/ndlongvn/AI-Project-2022/blob/main/notebooks/CNN.ipynb)
+    - [InceptionV3 + VGG16 + ResNet50 + DenseNet121](https://github.com/ndlongvn/AI-Project-2022/blob/main/notebooks/Finetune.ipynb)
+    - [EDA](https://github.com/ndlongvn/AI-Project-2022/blob/main/notebooks/EDA.ipynb) 
+2.  Resume from last checkpoint.
+You can load the checkpoint from <a href="https://github.com/ndlongvn/AI-Project-2022/tree/main/checkpoints">checkpoints</a> folder to test or resume training.
+
+### How to using this app
+1. Access to cloned folder from GitHub and install all requirements:
+```Shell
+pip install -r requirements.txt
+```
+2. Download checkpoints from [Model Checkpoints](#model) and put it into <a href="https://github.com/ndlongvn/AI-Project-2022/tree/main/checkpoints">checkpoints</a> folder.
+3. Run app:
+```Shell
+streamlit run src/main.py
+```
+
 ### Model
 
 <details open>
@@ -28,14 +87,14 @@
 
 </details>
 
+### Citation
 
-### How to using this app
-1. Access to cloned folder from GitHub and install all requirements:
-```Shell
-pip install -r requirements.txt
-```
-2. Download checkpoints from [Model Checkpoints](#model) and put it into <a href="https://github.com/ndlongvn/AI-Project-2022/tree/main/checkpoints">checkpoints</a> folder.
-2. Run app:
-```Shell
-streamlit run src/main.py
-```
+### Contact
+If you have any question, please contact us via email:
+- Long Nguyen: long.nd204580@sis.hust.edu.vn
+- Luong Ho: luong.hvd200376@sis.hust.edu.vn
+- Truong Pham: truong.px200655@sis.hust.edu.vn
+- Thu Ngo: thu.nta200623@sis.hust.edu.vn
+
+
+
