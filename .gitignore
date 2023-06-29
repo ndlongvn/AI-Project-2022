@@ -6,3 +6,4 @@ checkpoints/densenet121.h5
 *.h5
 .DS_Store
 *.pyc
+src/main.py
