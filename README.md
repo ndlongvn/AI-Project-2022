@@ -1,5 +1,5 @@
 # AI-Project-2022
-![Lung Disease Detector](image/interface.png)
+![Lung Disease Detector](image/other/interface.png)
 ## Authors
 
 [LongNguyen](https://github.com/ndlongvn), [LuongHo](https://github.com/LuongHvd), [TruongPham](https://github.com/giacatxt), [ThuNgo](https://github.com/superyogurt)
@@ -21,7 +21,7 @@
 ## Deep Learning
 ### Introduction
 
-This is the respository of ours Artificial Intelligence project using CNN-based model as CNN, ResNet50, VGG16, DenseNet121 and InceptionV3 to diagnose some popular lung diseases. In this repository, we provide training code, pre-trained models, network settings for AI model. We also provide an app to use our model to diagnose lung diseases. 
+This is the respository of ours Artificial Intelligence project using CNN-based model as CNN, ResNet50, VGG16, DenseNet121, InceptionV3 and MultiScale Convolution DenseNet (Ours) to diagnose some popular lung diseases. In this repository, we provide training code, pre-trained models, network settings for AI model. We also provide an app to use our model to diagnose lung diseases. 
 
 By using this repository, you can achieve a performance of 91% accuracy on the test set of our dataset. Therefor you can use our model to diagnose lung diseases with high accuracy.
 
@@ -84,6 +84,7 @@ streamlit run src/main.py
 |InceptionV3       |   88  |[GoogleDrive](https://drive.google.com/file/d/1MKnFLCrOY251ClDGsHI9WiYUpeLZFo6D/view?usp=drive_link) |    85  |
 |ResNet50        |   90   |[GoogleDrive](https://drive.google.com/file/d/13IDUZwuPN3msVN-Rx3BsBQ23UlACsuO6/view?usp=drive_link) |    91  |
 |DenseNet121|   91   |[GoogleDrive](https://drive.google.com/file/d/12PTu5_CjryaFT0RaHZqIipjnwthv_eXJ/view?usp=drive_link) |    28   |
+|MultiScale Convolution DenseNet|   92   |[GoogleDrive](https://drive.google.com/file/d/1UttjG5bsNBXiur_-3Io4kk4N6pJ4z9Mk/view?usp=drive_link) |    127  |
 
 </details>
 

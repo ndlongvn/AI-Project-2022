@@ -61,8 +61,10 @@ def save_uploaded_file(uploaded_file):
         return 0  
     
 # highlight high and low value
-def color_value(val):
+def color_value(val, normal= False):
     value= float(val[:-1])
+    if normal:
+        return 'color: green'
     if value <= 20:
         return 'color: green'
     elif value > 20 and value < 80:

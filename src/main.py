@@ -12,6 +12,7 @@ sys.path.append(parent_dir)
 from model.ANN import MLP_Model
 from model.CNN import CNN_Model
 from model.Finetune import ResNet50_Model, DenseNet121_Model
+from model.SE_DenseNet import Multi_CNN_SE_DenseNet
 import time
 import cv2
 from streamlit_lottie import st_lottie
@@ -48,7 +49,8 @@ if __name__ == '__main__':
         dict_model_path= {'ANN': 'checkpoints/ann_weights.h5', 
                         'CNN': 'checkpoints/cnn.h5', 
                         'ResNet50': 'checkpoints/resnet50.h5', 
-                        'DenseNet121 (Best Model)': 'checkpoints/densenet121.h5'}
+                        'DenseNet121 (Best Model)': 'checkpoints/densenet121.h5',
+                        'MultiScale Convolution DenseNet (Best Model)': 'checkpoints/multi_se_densenet.h5'}
         time.sleep(1)
     
     lottie_book = load_lottieurl("https://assets4.lottiefiles.com/temp/lf20_aKAfIn.json")
@@ -69,7 +71,7 @@ if __name__ == '__main__':
     instructions = """
             * This is a simple web app to classify some popular disease from X-Ray images. 
             * The dataset is from Kaggle.
-            * The model using ANN, CNN, ResNet50, DenseNet121 (Best Model).
+            * The model using ANN, CNN, ResNet50, DenseNet121 and MultiScale Convolution DenseNet (Best Model).
             """
     st.markdown(instructions)
 
@@ -81,7 +83,8 @@ if __name__ == '__main__':
             st.checkbox('ANN', key='ANN_model')
             st.checkbox('CNN', key='CNN_model')
             st.checkbox('ResNet50', key='ResNet50_model')
-            st.checkbox('DenseNet121 (Best Model)', key='DenseNet121_model', value= True)
+            st.checkbox('DenseNet121' , key='DenseNet121_model')
+            st.checkbox('MultiScale Convolution DenseNet (Best Model)', key='MSMCD_model', value= True)
         with st.expander("❄️ Disease", True):
             st.checkbox('Covid19', key='Covid19_di')
             st.checkbox('Pneumonia', key='Pneumonia_di')
@@ -101,6 +104,8 @@ if __name__ == '__main__':
         use_model = 'ResNet50'
     elif st.session_state['DenseNet121_model']:
         use_model = 'DenseNet121 (Best Model)'
+    elif st.session_state.MSMCD_model:
+        use_model = 'MultiScale Convolution DenseNet (Best Model)'
 
     # check disease    
 
@@ -139,7 +144,7 @@ if __name__ == '__main__':
     cov= [] # Covid19
     pne= [] # Pneumothorax
     
-    img_path= [os.path.join(parent_dir, 'image', uploaded_file.name).replace('\\', '/') for uploaded_file in uploaded_files]
+    img_path= [os.path.join(parent_dir, 'image/x-ray', uploaded_file.name).replace('\\', '/') for uploaded_file in uploaded_files]
     # img_path= [os.path.join(parent_dir, 'image', uploaded_file.name).replace('/', '\\') for uploaded_file in uploaded_files]
     if uploaded_files is not None and len(uploaded_files) != 0:   
             if st.button('Predict For Image'): 
@@ -153,6 +158,8 @@ if __name__ == '__main__':
                         model= load_model(ResNet50_Model(input_shape= input_shape, num_classes= num_classes), os.path.join(parent_dir, dict_model_path[use_model]))#.replace('/', '\\'))
                     elif use_model == 'DenseNet121 (Best Model)':
                         model= load_model(DenseNet121_Model(input_shape= input_shape, num_classes= num_classes), os.path.join(parent_dir, dict_model_path[use_model]))#.replace('/', '\\'))
+                    elif use_model == 'MultiScale Convolution DenseNet (Best Model)':
+                        model= load_model(Multi_CNN_SE_DenseNet(input_shape= input_shape, num_classes= num_classes), os.path.join(parent_dir, dict_model_path[use_model]))
                     preds= predict(img_path, model)
                     for i, pred in enumerate(preds):
                         normal.append(pred[1])
@@ -183,9 +190,27 @@ if __name__ == '__main__':
                         df= df_softmax.copy()
 
                     # 
-                    for i in ['NORMAL']+ use_disease:
-                        if i != 'Link'.upper() and i != 'Image'.upper() and i != 'Name'.upper():
-                            df[i] = df[i].apply(lambda x: '{:.2f}%'.format(x)).apply(lambda x: f'<span style="{color_value(x)}">{x}</span>').apply(lambda x: f'<span style="font-size: 18px">{x}</span>')
+                    pred_id= np.argmax(preds, axis=1)
+                    print(pred_id)
+                    # for i in ['NORMAL']+ use_disease:
+                    #     if i != 'Link'.upper() and i != 'Image'.upper() and i != 'Name'.upper():
+                    #         # if i == 'NORMAL':
+                    #         #     df[i] = df[i].apply(lambda x: '{:.2f}%'.format(x)).apply(lambda x: f'<span style="{color_value(x, normal= True)}">{x}</span>').apply(lambda x: f'<span style="font-size: 18px">{x}</span>')
+                    #         # else:
+                    #             df[i] = df[i].apply(lambda x: '{:.2f}%'.format(x)).apply(lambda x: f'<span style="{color_value(x)}">{x}</span>').apply(lambda x: f'<span style="font-size: 18px">{x}</span>')
+                    for index, row in df.iterrows():
+                        for i in ['NORMAL'] + use_disease:
+                            if i != 'Link'.upper() and i != 'Image'.upper() and i != 'Name'.upper():
+                                if pred_id[index] == 1:
+                                    df.loc[index, i] = '{:.2f}%'.format(row[i])
+                                    df.loc[index, i] = f'<span style="{color_value(df.loc[index, i], normal=True)}">{df.loc[index, i]}</span>'
+                                    df.loc[index, i] = f'<span style="font-size: 18px">{df.loc[index, i]}</span>'
+                                else:
+                                    df.loc[index, i] = '{:.2f}%'.format(row[i])
+                                    df.loc[index, i] = f'<span style="{color_value(df.loc[index, i])}">{df.loc[index, i]}</span>'
+                                    df.loc[index, i] = f'<span style="font-size: 18px">{df.loc[index, i]}</span>'
+
+                    
                     df= df[['Image'.upper(), 'Link'.upper(), 'Name'.upper()]+ ['NORMAL']+ use_disease] 
                     
                     df1= df[['Name'.upper()]+ ['NORMAL']+ use_disease].copy()
@@ -233,6 +258,8 @@ if __name__ == '__main__':
                 \n
                 Powered by LuongBank.
                 """, unsafe_allow_html=True)
+    st.markdown("#### Or scan this QR code to support us")
+    st.image('image/other/qr.png', width= 300)
                 
     # st.image('image/coffee.jpg', width= 200)
 
