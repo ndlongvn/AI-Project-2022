@@ -144,8 +144,9 @@ streamlit run src/main.py
 If you have any question, please contact us via email:
 - Long Nguyen: long.nd204580@sis.hust.edu.vn
 - Luong Ho: luong.hvd200376@sis.hust.edu.vn
-- Truong Pham: truong.px200655@sis.hust.edu.vn
 - Thu Ngo: thu.nta200623@sis.hust.edu.vn
+- Truong Pham: truong.px200655@sis.hust.edu.vn
+
 
 
 
